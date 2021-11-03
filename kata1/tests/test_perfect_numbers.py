@@ -11,6 +11,7 @@ from kata1.perfect_numbers import get_perfect_number, get_perfect_number_list, i
 ])
 def test_get_sum_of_digits(number, expected):
     result = get_sum_of_digits(number)
+    # sum only once, even the sum is greater than 10 it needs to stop§
     assert result == expected
 
 
