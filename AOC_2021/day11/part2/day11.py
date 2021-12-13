@@ -8,19 +8,22 @@ def flash_octopus(to_be_flashed_octopuses, octopuses,flashed_octopuses):
     for octopus in to_be_flashed_octopuses:
         row = octopus[0]
         column = octopus[1]
-        if row + 1 < len(octopuses): octopuses[row + 1,column]  += 1  # down
-        if row - 1 >= 0: octopuses[row - 1, column] += 1  # up
-        if column - 1 >= 0: octopuses[row, column - 1] += 1  # left
-        if column + 1 < len(octopuses[0]): octopuses[
-            row, column + 1] += 1  # right
-        if row + 1 < len(octopuses) and column - 1 >= 0: octopuses[
-            row + 1, column - 1] += 1  # down left
-        if row - 1 >= 0 and column - 1 >= 0: octopuses[
-            row - 1, column - 1] += 1  # up left
-        if row + 1 < len(octopuses) and column + 1 < len(octopuses[0]): octopuses[
-            row + 1, column + 1] += 1  # down right
-        if row - 1 >= 0 and column + 1 < len(octopuses[0]): octopuses[
-            row - 1, column + 1] += 1  # up right
+        if row + 1 < len(octopuses):
+            octopuses[row + 1,column]  += 1  # down
+        if row - 1 >= 0:
+            octopuses[row - 1, column] += 1  # up
+        if column - 1 >= 0:
+            octopuses[row, column - 1] += 1  # left
+        if column + 1 < len(octopuses[0]):
+            octopuses[row, column + 1] += 1  # right
+        if row + 1 < len(octopuses) and column - 1 >= 0:
+            octopuses[row + 1, column - 1] += 1  # down left
+        if row - 1 >= 0 and column - 1 >= 0:
+            octopuses[row - 1, column - 1] += 1  # up left
+        if row + 1 < len(octopuses) and column + 1 < len(octopuses[0]):
+            octopuses[row + 1, column + 1] += 1  # down right
+        if row - 1 >= 0 and column + 1 < len(octopuses[0]):
+            octopuses[row - 1, column + 1] += 1  # up right
         flashed_octopuses.append(octopus)
     to_be_flashed_octopuses = get_next_flashing_octopus(octopuses,flashed_octopuses)
     return to_be_flashed_octopuses,octopuses, flashed_octopuses
