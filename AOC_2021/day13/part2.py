@@ -51,7 +51,7 @@ def main():
         x += 1
         paper = fold_paper(paper,instruction)
     print(paper)
-    print('Dot counts after {} instraction : {}'.format(instruction,np.count_nonzero(paper)))
+    print('Dot counts after {} instraction : {}, Debug to see the characters from paper array'.format(instruction,np.count_nonzero(paper)))
 
     # print(paper)
     # new_list, paths = find_paths(caves,caves, [])
